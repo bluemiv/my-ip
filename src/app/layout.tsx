@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Header } from '@/features/layout';
-import './globals.css';
+import classNames from 'classnames';
 import configuration from '../configuration';
+import { Header, Footer } from '@/features/layout';
+import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,9 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
     <html lang="ko">
-    <body className={inter.className}>
+    <body className={classNames(inter.className, 'min-w-screen min-h-screen')}>
     <Header />
     {children}
+    <Footer />
     </body>
     </html>
   );
