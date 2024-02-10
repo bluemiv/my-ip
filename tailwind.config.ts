@@ -20,23 +20,18 @@ const primaryColor = {
 const config: Config = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    colors: {
-      ...primaryColor
-    },
-    padding: {
-      ...space
-    },
-    margin: {
-      ...space
-    },
-    gap: {
-      ...space
-    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
+      colors: {
+        ...primaryColor
+      },
+      padding: {
+        ...space
+      },
+      margin: {
+        ...space
+      },
+      gap: {
+        ...space
       }
     }
   },
