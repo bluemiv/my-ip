@@ -12,4 +12,16 @@ export type TConfiguration = {
   readonly BLOG_URL: string;
   readonly GITHUB_URL: string;
   readonly EMAIL: string;
-}
+  readonly IP_API_URL: string;
+};
+
+export type TIPInfo = {
+  country_code?: null | string;
+  country_name?: null | string;
+  city?: null | string;
+  postal?: null | string;
+  latitude?: null | number;
+  longitude?: null | number;
+  IPv4?: null | string;
+  state?: null | string;
+};
