@@ -1,18 +1,34 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import configuration from '@/configuration';
 import { IpInfoContainer, IpSubInfoContainer } from '@/features/ip';
+import { TIPInfo } from '@/types';
 
 const fetchIp = async () => {
-  const ipRes = await fetch([configuration.IP_API_URL, 'json'].join('/'), {
+  const ipApiUrl = ['https://geolocation-db.com', 'json', configuration.IP_API_KEY].join('/');
+  const ipRes = await fetch(ipApiUrl, {
     next: { revalidate: 10 },
   });
   return await ipRes.json();
 };
 
-export default async function Home() {
-  const ipInfo = await fetchIp();
+export default function Home() {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [ipInfo, setIpInfo] = useState<null | TIPInfo>(null);
+
+  useEffect(() => {
+    fetchIp().then((ipInfo) => {
+      setIpInfo(ipInfo);
+      setIsLoading(false);
+    });
+  }, []);
+
+  if (isLoading || !ipInfo) return <div>loading</div>;
+
   return (
     <>
-      <IpInfoContainer ipv4={ipInfo?.IPv4} />
+      <IpInfoContainer ipv4={ipInfo?.IPv4 || ''} />
       <IpSubInfoContainer ipInfo={ipInfo} />
     </>
   );

@@ -6,7 +6,7 @@ const configuration = {
   BLOG_URL: process.env.NEXT_PUBLIC_BLOG_URL,
   GITHUB_URL: process.env.NEXT_PUBLIC_GITHUB_URL,
   EMAIL: process.env.NEXT_PUBLIC_EMAIL,
-  IP_API_URL: process.env.NEXT_PUBLIC_IP_API_URL,
+  IP_API_KEY: process.env.NEXT_PUBLIC_IP_API_KEY,
 } as TConfiguration;
 
 export default configuration;
