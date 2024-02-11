@@ -6,7 +6,7 @@ interface TProps {
 
 export default function IpSubInfoContainer({ ipInfo }: TProps) {
   return (
-    <div className="flex flex-col gap-md p-xl">
+    <div className="flex flex-col gap-lg p-xl">
       {[
         {
           label: '국가',
@@ -18,12 +18,15 @@ export default function IpSubInfoContainer({ ipInfo }: TProps) {
           label: '우편번호',
           value: ipInfo.postal,
         },
-        { label: '주소', value: ipInfo.city },
+        {
+          label: '주소',
+          value: [ipInfo.state, ipInfo.city].filter((v) => !!v).join(' '),
+        },
         { label: '위도/경도', value: [ipInfo.latitude, ipInfo.longitude].join(' / ') },
       ]
         .filter(({ value }) => !!value)
         .map(({ label, value }) => (
-          <div key={label} className="flex gap-md">
+          <div key={label} className="flex flex-col md:flex-row gap-md">
             <span className="w-[80px]">{label}</span>
             <span className="font-bold">{value}</span>
           </div>
