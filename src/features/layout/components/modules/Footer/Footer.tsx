@@ -16,7 +16,7 @@ export default function Footer() {
             </Button.Link>
           </div>
           <div className="flex gap-sm items-center">
-            <span className="flex gap-xs">
+            <span className="flex items-center gap-xs">
               <Icons.Github />
               <span>Github</span>
             </span>
@@ -25,7 +25,7 @@ export default function Footer() {
             </Button.Link>
           </div>
           <div className="flex gap-sm items-center">
-            <span className="flex gap-xs">
+            <span className="flex items-center gap-xs">
               <Icons.Email />
               <span>Email</span>
             </span>
