@@ -12,7 +12,7 @@ export type TConfiguration = {
   readonly BLOG_URL: string;
   readonly GITHUB_URL: string;
   readonly EMAIL: string;
-  readonly IP_API_URL: string;
+  readonly IP_API_KEY: string;
 };
 
 export type TIPInfo = {
