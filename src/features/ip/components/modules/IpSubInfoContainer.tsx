@@ -6,7 +6,7 @@ interface TProps {
 
 export default function IpSubInfoContainer({ ipInfo }: TProps) {
   return (
-    <div className="flex flex-col gap-lg p-xl">
+    <div className="flex flex-col gap-lg p-xl animate-fade-in">
       {[
         {
           label: '국가',
