@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import configuration from '@/configuration';
-import { IpInfoContainer, IpSubInfoContainer } from '@/features/ip';
+import { configuration } from '@/constants';
+import { IpInfoContainer, IpSubInfoContainer } from '@/components';
 import { TIPInfo } from '@/types';
 
 const fetchIp = async () => {

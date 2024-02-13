@@ -1,7 +1,7 @@
 import LinkButton from './LinkButton';
 
 const Button = {
-  Link: LinkButton
+  Link: LinkButton,
 };
 
 export default Button;
