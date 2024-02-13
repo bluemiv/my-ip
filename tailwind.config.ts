@@ -8,33 +8,44 @@ const space = {
   lg: '1.5rem',
   xl: '2rem',
   '2xl': '3rem',
-  '3xl': '5rem'
+  '3xl': '5rem',
 };
 
 const primaryColor = {
   primary: '#096dd9',
   'primary-hover': '#1890ff',
-  'primary-active': '#0050b3'
+  'primary-active': '#0050b3',
 };
 
 const config: Config = {
+  darkMode: 'class',
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
-        ...primaryColor
+        ...primaryColor,
       },
       padding: {
-        ...space
+        ...space,
       },
       margin: {
-        ...space
+        ...space,
       },
       gap: {
-        ...space
-      }
-    }
+        ...space,
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { marginTop: '-0.5rem', opacity: '0' },
+          '80%': { marginTop: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out forwards',
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
 export default config;

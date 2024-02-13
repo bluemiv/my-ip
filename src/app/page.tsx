@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import configuration from '@/configuration';
-import { IpInfoContainer, IpSubInfoContainer } from '@/features/ip';
+import { configuration } from '@/constants';
+import { IpInfoContainer, IpSubInfoContainer } from '@/components';
 import { TIPInfo } from '@/types';
 
 const fetchIp = async () => {
@@ -24,7 +24,9 @@ export default function Home() {
     });
   }, []);
 
-  if (isLoading || !ipInfo) return <div>loading</div>;
+  if (isLoading || !ipInfo) {
+    return <p className="flex items-center justify-center h-[350px]">주소를 찾고 있습니다.</p>;
+  }
 
   return (
     <>

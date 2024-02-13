@@ -25,3 +25,5 @@ export type TIPInfo = {
   IPv4?: null | string;
   state?: null | string;
 };
+
+export type TValueOf<T = unknown> = T[keyof T];

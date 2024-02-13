@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
-import { toDateYearString } from '@/features/date';
-import configuration from '@/configuration';
 import { Button, Icons } from '@/components';
+import { configuration } from '@/constants';
+import { toDateYearString } from '@/utils';
 
 export default function Footer() {
   return (
