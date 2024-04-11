@@ -4,9 +4,9 @@ interface TProps {
   ipInfo: TIPInfo;
 }
 
-export default function IpSubInfoContainer({ ipInfo }: TProps) {
+export default function IpSubInfo({ ipInfo }: TProps) {
   return (
-    <div className="flex flex-col gap-lg p-xl animate-fade-in">
+    <div className="flex flex-col gap-lg animate-fade-in">
       {[
         {
           label: '국가',
