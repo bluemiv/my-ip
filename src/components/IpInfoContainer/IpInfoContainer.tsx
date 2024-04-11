@@ -5,10 +5,6 @@ import { TIPInfo } from '@/types';
 import { configuration } from '@/constants';
 import IpSubInfo from './IpSubInfo';
 
-interface TProps {
-  ipv4?: string;
-}
-
 const fetchIp = async () => {
   const ipApiUrl = ['https://geolocation-db.com', 'json', configuration.IP_API_KEY].join('/');
   const ipRes = await fetch(ipApiUrl, {
@@ -17,7 +13,7 @@ const fetchIp = async () => {
   return await ipRes.json();
 };
 
-export default function IpInfoContainer({ ipv4 }: TProps) {
+export default function IpInfoContainer() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [ipInfo, setIpInfo] = useState<null | TIPInfo>(null);
 
@@ -34,10 +30,10 @@ export default function IpInfoContainer({ ipv4 }: TProps) {
 
   return (
     <div className="flex flex-col gap-lg">
-      <div className="p-xl animate-fade-in">
+      <div className="animate-fade-in">
         <div className="bg-[#d0ebff] flex flex-col md:flex-row justify-center items-center gap-md text-3xl rounded-lg h-[250px]">
           <span>내 IP 주소</span>
-          <span className="text-primary font-bold">{ipv4}</span>
+          <span className="text-primary font-bold">{ipInfo.IPv4}</span>
         </div>
       </div>
       <IpSubInfo ipInfo={ipInfo} />
